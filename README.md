@@ -2,7 +2,7 @@
 地理GEO信息爬取
 
 # 技术架构
-idea maven springboot mybatis
+idea maven springboot mybatis sqlite
 
 # 文档结构
 \controller\CrawlerController.java
