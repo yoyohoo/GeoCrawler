@@ -1,0 +1,21 @@
+package com.example.mybatis.mapper;
+
+import com.example.mybatis.entity.Region;
+
+import java.util.List;
+
+public interface RegionMapper {
+
+    //    查询所有省市区
+    List<Region> getAllRegions();
+
+    //    查询所有省份
+    List<Region> getAllProvinces();
+
+    //    查询省份下所有市
+    List<Region> getCityByProvince(Integer provinceId);
+
+    //    查询市下所有区县
+    List<Region> getCountryByCity(Integer cityId);
+
+}
