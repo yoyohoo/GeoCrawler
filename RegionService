@@ -1,0 +1,32 @@
+package com.example.mybatis.service;
+
+import com.example.mybatis.entity.Region;
+import com.example.mybatis.mapper.RegionMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class RegionService {
+
+    @Autowired
+    RegionMapper regionMapper;
+
+    public List<Region> getAll() {
+        return regionMapper.getAllRegions();
+    }
+
+    public List<Region> getAllProvinces() {
+        return regionMapper.getAllProvinces();
+    }
+
+    public List<Region> getCityByProvince(Integer provinceId) {
+        return regionMapper.getCityByProvince(provinceId);
+    }
+
+    public List<Region> getCountryByCity(Integer cityId) {
+        return regionMapper.getCountryByCity(cityId);
+    }
+
+}
