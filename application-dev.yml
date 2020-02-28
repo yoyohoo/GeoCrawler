@@ -1,0 +1,23 @@
+# Tomcat
+server:
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+  port: 8088
+
+#spring
+spring:
+  # 指定静态资源的路径
+  resources:
+    static-locations: classpath:/static/,classpath:/views/,file:${web.upload},file:${web.ueditorUpload}
+  datasource:
+    driver-class-name: org.sqlite.JDBC
+#    url: jdbc:sqlite::resource:static/sqlite/my.db
+    url: jdbc:sqlite:D:\ZXF\IDEA\mybatis\src\main\resources\static\sqlite\my.db
+    username:
+    password:
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.example.mybatis.entity
