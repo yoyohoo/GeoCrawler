@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatis.mapper.RegionMapper">
+
+    <select id="getAllRegions" resultType="com.example.mybatis.entity.Region">
+        select * from region where 1=1 order by id asc;
+    </select>
+
+    <select id="getAllProvinces" resultType="com.example.mybatis.entity.Region">
+        select * from region t where t.parent_id=0 order by id asc;
+    </select>
+
+    <select id="getCityByProvince" resultType="com.example.mybatis.entity.Region">
+        select * from region t where t.parent_id=#{provinceId} order by id asc;
+    </select>
+
+    <select id="getCountryByCity" resultType="com.example.mybatis.entity.Region">
+        select * from region t where t.parent_id=#{cityId} order by id asc;
+    </select>
+
+</mapper>
